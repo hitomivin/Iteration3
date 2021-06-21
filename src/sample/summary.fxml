@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<!-- a comment -->
+<!--
+<GridPane fx:id="grid" alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="sample.PatientController"
+        style="-fx-background-image:
+        url(https://media.gettyimages.com/photos/these-hands-will-take-care-of-you-picture-id855467380?s=2048x2048)">
+-->
+<GridPane fx:id="grid" alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="sample.SummaryController"
+          prefHeight="500">
+
+    <!-- -->
+    <Label fx:id="labelPostnr" text="Post number : " GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <TextField fx:id="textPostnr"  prefWidth="200" promptText="PostNr" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+    <Label fx:id="labelTidsperiode" text="Tidsperiode" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <Label fx:id="labelTidsperiodeFra" text="Fra" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <DatePicker fx:id="datepickerTidsperiodeFra" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+    <Label fx:id="labelTidsperiodeTil" text="Til" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+    <DatePicker fx:id="datepickerTidsperiodeTil" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+    <Button fx:id="buttonMakeSummary" text="OK" GridPane.columnIndex="0" GridPane.rowIndex="2" onAction="#onMakeSummary"/>
+    <TextArea fx:id="textAreaSummary" prefWidth="830" prefHeight="190"
+              editable="false" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="6" GridPane.rowSpan="1"
+              text="Smittesummary kan ses">
+        <font>
+            <Font name="Courier New" size="11.0" />
+        </font>
+    </TextArea>
+    <Button fx:id="buttonExportXML" text="Eksport(xml)" GridPane.columnIndex="5" GridPane.rowIndex="5" GridPane.halignment="RIGHT" onAction="#onExportXML"/>
+    <!--
+    <Button fx:id="buttonAdd" text="Add patient" GridPane.columnIndex="0" GridPane.rowIndex="3" onAction="#onAddPatient"/>
+    <Button fx:id="buttonClearAll" text="Clear all" GridPane.columnIndex="0" GridPane.rowIndex="6" onAction="#onClearAll"/>
+    -->
+
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+
+</GridPane>

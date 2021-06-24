@@ -45,7 +45,7 @@ public class SummaryController {
         String periodeFra = datepickerTidsperiodeFra.getValue().toString();
         String periodeTil = datepickerTidsperiodeTil.getValue().toString();
 
-        statistik = new Statistik(postnr, datepickerTidsperiodeFra.getValue(), datepickerTidsperiodeTil.getValue());
+        Statistik st = new Statistik(postnr, datepickerTidsperiodeFra.getValue(), datepickerTidsperiodeTil.getValue());
 
         // tjek, om input er rigtig
         // postnr skal være 4 cifre
@@ -53,11 +53,11 @@ public class SummaryController {
         // periodeTil må ikke være tidligere end periodeFra, men der accepteres, når der er en samme dag (00:00:00-23:59:59)
 
         // indhent data
-        statistik.addMutations(new Database().getStatistikMutationList(postnr, periodeFra, periodeTil));
+        st.addMutations(new Database().getStatistikMutationList(postnr, periodeFra, periodeTil));
 
         // vis
         resetTextFields(grid);
-        textAreaSummary.setText(statistik.printStatistik());
+        textAreaSummary.setText(st.printStatistik());
 
     }
 
